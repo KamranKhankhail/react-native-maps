@@ -214,3 +214,5 @@ Enter the name of the API key and create it.
   ```
   
 1. If you are using Android Virtual Devices (AVD), ensure that `Use Host GPU` is checked in the settings for your virtual device.
+
+1. If you run into `Caused by: java.lang.NoClassDefFoundError: com.google.android.gms.maps.GoogleMapOptions` error check the first point of the manual installation steps. You most probably have a package that is including a different Google Play services version, than the one react native maps ships with per default. 
