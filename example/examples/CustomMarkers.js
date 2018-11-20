@@ -33,6 +33,7 @@ class CustomMarkers extends React.Component {
         longitudeDelta: LONGITUDE_DELTA,
       },
       markers: data,
+      mapReady: false
     };
 
     this.onMapPress = this.onMapPress.bind(this);
@@ -40,6 +41,7 @@ class CustomMarkers extends React.Component {
 
 
   render() {
+    const {mapReady} = this.state
     const markers = [...(this.state.markers)]
     return (
       <View style={styles.container}>
@@ -47,8 +49,11 @@ class CustomMarkers extends React.Component {
           provider={this.props.provider}
           style={styles.map}
           initialRegion={this.state.region}
+          onMapReady={() => {
+            this.setState({mapReady: true})
+          }}
         >
-          {markers.map(marker => {
+          {mapReady && markers.map(marker => {
 
             return (
               <Marker
