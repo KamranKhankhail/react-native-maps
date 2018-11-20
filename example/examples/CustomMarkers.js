@@ -36,7 +36,6 @@ class CustomMarkers extends React.Component {
       mapReady: false
     };
 
-    this.onMapPress = this.onMapPress.bind(this);
   }
 
 
